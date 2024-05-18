@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { envConfig } from './shared/config/env'
-
+import router from './routes'
 
 const PORT = envConfig.PORT;
 
@@ -12,6 +12,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Hello World');
 })
+app.use('/api', router)
 
 
 app.listen(PORT, ()=> {
