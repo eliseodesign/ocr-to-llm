@@ -1,0 +1,24 @@
+ --- PROMPT ---
+interface Offensive {
+  level: number; // The level of offensive language used in the conversation (0-1)
+  userOfensive: string[]; // The user(s) who used offensive language in the conversation
+}
+
+interface Concordance {
+  level: number; // The level of concordance between the messages in the conversation (0-1)
+  userOutConcordance: string[]; // The user(s) who sent messages that were off-topic or unrelated to the conversation
+}
+
+interface MessageAnalysis {
+	offensive: Offensive // Information about the use of offensive language in the conversation
+	concordance: Concordance // Information about the level of concordance between the messages in the conversation
+	topics: string[] // The topics discussed in the conversation
+	message: string // Explaination of the message if it is offensive or off-topic
+}
+
+Returns in json format without conversation, a json of type MessageAnalysis, based on analysis of the following conversation:
+--- END PROMPT ---
+
+--- CONVERSATION ---
+{{Messages}}
+--- END CONVERSATION ---
