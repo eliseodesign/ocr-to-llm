@@ -1,0 +1,86 @@
+--- PROMPT ---
+interface PeriodoTributario {
+    mes: string;
+    anio: string;
+  }
+  
+  interface NoDomiciliados {
+    comprobanteLiquidacionCC: number;
+    comprobanteLiquidacionFacturas: number;
+  }
+  
+  interface VentasGravadasCuentaTerceros {
+    noDomiciliados: NoDomiciliados;
+  }
+  
+  interface ExportacionesBienes {
+    fueraRegionCentroamericana: number;
+    regionCentroamericana: number;
+  }
+  
+  interface VentasInternasGravadas {
+    comprobanteCreditoFiscal: number;
+    factura: number;
+  }
+  
+  interface DebitosVentas {
+    comprobanteCreditoFiscal: number;
+    facturas: number;
+    devolucionRebajasDescuentosVentas: number;
+    operacionesGravadasComprobanteLiquidacion: number;
+  }
+  
+  interface Document {
+    numeroDeclaracion: string;
+    periodoTributario: PeriodoTributario;
+    nit: string;
+    nrc: string;
+    razonSocial: string;
+    actividadEconomicaPrincipal: string;
+    telefono: string;
+    ventasInternasExentas: number;
+    ventasInternasNoSujetas: number;
+    ventasGravadasCuentaTerceros: VentasGravadasCuentaTerceros;
+    exportacionesBienes: ExportacionesBienes;
+    exportacionesServicios: number;
+    ventasInternasExentasNoSujetasProporcionalidad: number;
+    ventasZonasFrancasDPA: number;
+    ventasInternasGravadas: VentasInternasGravadas;
+    devolucionesRebajasDescuentosVentas: number;
+    operacionesGravadasComprobanteLiquidacion: number;
+    operacionesComprobanteLiquidacionTasaCeroExentas: number;
+    debitosVentas: DebitosVentas;
+    debitoProvenienteCreditoNegativo: number;
+    sumaVentas: number;
+    sumaDebitos: number;
+    comprasInternasExentasNoSujetas: number;
+    comprasSujetosExcluidos: number;
+    importacionesExentasNoSujetas: number;
+    importacionesGravadasServicios: number;
+    creditoImportacionServicios: number;
+    importacionesGravadasMercanciasFueraRegionCA: number;
+    creditoImportacionesGravadasMercanciasFueraRegionCA: number;
+    internacionesGravadasMercanciasDentroRegionCA: number;
+    creditoInternacionesGravadasMercanciasDentroRegionCA: number;
+    comprasInternasGravadas: number;
+    creditoComprasInternasGravadas: number;
+    devolucionesRebajasDescuentosCompras: number;
+    remanenteCreditoPeriodoAnterior: number;
+    reintegroCreditoFiscalIVAExportaciones: number;
+    creditoRetencion13IVA: number;
+    creditoIVAProporcionalidadMensual: number;
+    creditoIVAAjusteProporcionalidadAnualSuperior: number;
+    creditoIVAAjusteProporcionalidadAnualInferior: number;
+    disminucionSaldoFavorArt74ACT: number;
+    creditoProvenienteDebitoNegativo: number;
+    sumaCompras: number;
+    sumaCreditos: number;
+    remanenteCreditoProximoPeriodo: number;
+    impuestoDeterminado: number;
+  }
+  En base al OCR, extrae la información y devuelve en formato json siguiendo el tipo Document
+--- END PROMPT ---
+--- OCR ---
+{{ocr}}
+--- OCR END ---
+  

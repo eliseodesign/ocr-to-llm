@@ -1,0 +1,264 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "numeroDeclaracion": {
+        "type": "string"
+      },
+      "periodoTributario": {
+        "type": "object",
+        "properties": {
+          "mes": {
+            "type": "string"
+          },
+          "año": {
+            "type": "string"
+          }
+        },
+        "required": ["mes", "año"]
+      },
+      "nit": {
+        "type": "string"
+      },
+      "nrc": {
+        "type": "string"
+      },
+      "razonSocial": {
+        "type": "string"
+      },
+      "actividadEconomicaPrincipal": {
+        "type": "string"
+      },
+      "telefono": {
+        "type": "string"
+      },
+      "ventasInternasExentas": {
+        "type": "string"
+      },
+      "ventasInternasNoSujetas": {
+        "type": "string"
+      },
+      "ventasGravadasCuentaTerceros": {
+        "type": "object",
+        "properties": {
+          "noDomiciliados": {
+            "type": "object",
+            "properties": {
+              "comprobanteLiquidacionCC": {
+                "type": "string"
+              },
+              "comprobanteLiquidacionFacturas": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "comprobanteLiquidacionCC",
+              "comprobanteLiquidacionFacturas"
+            ]
+          }
+        },
+        "required": ["noDomiciliados"]
+      },
+      "exportacionesBienes": {
+        "type": "object",
+        "properties": {
+          "fueraRegionCentroamericana": {
+            "type": "string"
+          },
+          "regionCentroamericana": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fueraRegionCentroamericana",
+          "regionCentroamericana"
+        ]
+      },
+      "exportacionesServicios": {
+        "type": "string"
+      },
+      "ventasInternasExentasNoSujetasProporcionalidad": {
+        "type": "string"
+      },
+      "ventasZonasFrancasDPA": {
+        "type": "string"
+      },
+      "ventasInternasGravadas": {
+        "type": "object",
+        "properties": {
+          "comprobanteCreditoFiscal": {
+            "type": "string"
+          },
+          "factura": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "comprobanteCreditoFiscal",
+          "factura"
+        ]
+      },
+      "devolucionesRebajasDescuentosVentas": {
+        "type": "string"
+      },
+      "operacionesGravadasComprobanteLiquidacion": {
+        "type": "string"
+      },
+      "operacionesComprobanteLiquidacionTasaCeroExentas": {
+        "type": "string"
+      },
+      "debitosVentas": {
+        "type": "object",
+        "properties": {
+          "comprobanteCreditoFiscal": {
+            "type": "string"
+          },
+          "facturas": {
+            "type": "string"
+          },
+          "devolucionRebajasDescuentosVentas": {
+            "type": "string"
+          },
+          "operacionesGravadasComprobanteLiquidacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "comprobanteCreditoFiscal",
+          "facturas",
+          "devolucionRebajasDescuentosVentas",
+          "operacionesGravadasComprobanteLiquidacion"
+        ]
+      },
+      "debitoProvenienteCreditoNegativo": {
+        "type": "string"
+      },
+      "sumaVentas": {
+        "type": "string"
+      },
+      "sumaDebitos": {
+        "type": "string"
+      },
+      "comprasInternasExentasNoSujetas": {
+        "type": "string"
+      },
+      "comprasSujetosExcluidos": {
+        "type": "string"
+      },
+      "importacionesExentasNoSujetas": {
+        "type": "string"
+      },
+      "importacionesGravadasServicios": {
+        "type": "string"
+      },
+      "creditoImportacionServicios": {
+        "type": "string"
+      },
+      "importacionesGravadasMercanciasFueraRegionCA": {
+        "type": "string"
+      },
+      "creditoImportacionesGravadasMercanciasFueraRegionCA": {
+        "type": "string"
+      },
+      "internacionesGravadasMercanciasDentroRegionCA": {
+        "type": "string"
+      },
+      "creditoInternacionesGravadasMercanciasDentroRegionCA": {
+        "type": "string"
+      },
+      "comprasInternasGravadas": {
+        "type": "string"
+      },
+      "creditoComprasInternasGravadas": {
+        "type": "string"
+      },
+      "devolucionesRebajasDescuentosCompras": {
+        "type": "string"
+      },
+      "remanenteCreditoPeriodoAnterior": {
+        "type": "string"
+      },
+      "reintegroCreditoFiscalIVAExportaciones": {
+        "type": "string"
+      },
+      "creditoRetencion13IVA": {
+        "type": "string"
+      },
+      "creditoIVAProporcionalidadMensual": {
+        "type": "string"
+      },
+      "creditoIVAAjusteProporcionalidadAnualSuperior": {
+        "type": "string"
+      },
+      "creditoIVAAjusteProporcionalidadAnualInferior": {
+        "type": "string"
+      },
+      "disminucionSaldoFavorArt74ACT": {
+        "type": "string"
+      },
+      "creditoProvenienteDebitoNegativo": {
+        "type": "string"
+      },
+      "sumaCompras": {
+        "type": "string"
+      },
+      "sumaCreditos": {
+        "type": "string"
+      },
+      "remanenteCreditoProximoPeriodo": {
+        "type": "string"
+      },
+      "impuestoDeterminado": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "numeroDeclaracion",
+      "periodoTributario",
+      "nit",
+      "nrc",
+      "razonSocial",
+      "actividadEconomicaPrincipal",
+      "telefono",
+      "ventasInternasExentas",
+      "ventasInternasNoSujetas",
+      "ventasGravadasCuentaTerceros",
+      "exportacionesBienes",
+      "exportacionesServicios",
+      "ventasInternasExentasNoSujetasProporcionalidad",
+      "ventasZonasFrancasDPA",
+      "ventasInternasGravadas",
+      "devolucionesRebajasDescuentosVentas",
+      "operacionesGravadasComprobanteLiquidacion",
+      "operacionesComprobanteLiquidacionTasaCeroExentas",
+      "debitosVentas",
+      "debitoProvenienteCreditoNegativo",
+      "sumaVentas",
+      "sumaDebitos",
+      "comprasInternasExentasNoSujetas",
+      "comprasSujetosExcluidos",
+      "importacionesExentasNoSujetas",
+      "importacionesGravadasServicios",
+      "creditoImportacionServicios",
+      "importacionesGravadasMercanciasFueraRegionCA",
+      "creditoImportacionesGravadasMercanciasFueraRegionCA",
+      "internacionesGravadasMercanciasDentroRegionCA",
+      "creditoInternacionesGravadasMercanciasDentroRegionCA",
+      "comprasInternasGravadas",
+      "creditoComprasInternasGravadas",
+      "devolucionesRebajasDescuentosCompras",
+      "remanenteCreditoPeriodoAnterior",
+      "reintegroCreditoFiscalIVAExportaciones",
+      "creditoRetencion13IVA",
+      "creditoIVAProporcionalidadMensual",
+      "creditoIVAAjusteProporcionalidadAnualSuperior",
+      "creditoIVAAjusteProporcionalidadAnualInferior",
+      "disminucionSaldoFavorArt74ACT",
+      "creditoProvenienteDebitoNegativo",
+      "sumaCompras",
+      "sumaCreditos",
+      "remanenteCreditoProximoPeriodo",
+      "impuestoDeterminado"
+    ]
+  }
+  
