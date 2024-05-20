@@ -1,10 +1,17 @@
 import axios, { AxiosResponse } from 'axios';
 import { envConfig } from '../shared/config/env'
+import fs from 'fs';
+import path from 'path';
+
 
 class CompletionService {
   private apiUrl = 'https://api.mistral.ai/v1/chat/completions';
 
   async createCompletion(message: string, jsonMode: boolean = false): Promise<string> {
+    const propmtPath = path.join(__dirname, '../shared/utils/promp.txt')
+    const propmt = fs.readFileSync(propmtPath, 'utf8');
+    const clean = propmt.replace(/{{ocr}}/g, message);
+
     const responseFormat = {
         type: jsonMode ? 'json_object' : 'text',
     }
