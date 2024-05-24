@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { envConfig } from '../shared/config/env'
 import { DocumentAnalysisService } from '../service/azure.services'
-import { MistralProvider} from '../service/mistral.services'
+import { OpenAIProvider} from '../service/openai.services'
 import multer from 'multer';
 import fs from 'fs';
 import { config } from 'dotenv'
@@ -35,14 +35,14 @@ router.post('/ocr', upload.single('image'), async (req: Request, res: Response, 
         
             const read = await documentService.readResult(id)
             console.log("end read")
-            const mistral = new MistralProvider()
-            const result = await mistral.createCompletion(read.analyzeResult.content, true)
+            const openai = new OpenAIProvider()
+            const result = await openai.createCompletion(read.analyzeResult.content, true)
             
             const json = JSON.parse(result)
             res.json({
                 counter: counter,
                 limit: Number(process.env.LIMIT),
-                mistral: json
+                data: json
             });
         } else {
             res.status(400).json({ 
