@@ -27,16 +27,12 @@ export class MistralProvider {
         
         // minificar el mensaje, espacios en blanco, saltos de línea, etc.
         message = message.trim().replace(/\s+/g, ' ');
-        // const obj = {
-        //     length: message.length,
-        //     message
-        // }
-        // return JSON.stringify(obj)
+
         const responseFormat = {
             type: jsonMode ? 'json_object' : 'text',
         };
         const requestData = {
-            model: 'mistral-small',
+            model: 'open-mistral-7b',
             messages: [{ role: 'user', content: message }],
             response_format: responseFormat,
         };
