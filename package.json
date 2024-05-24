@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --files ./src/index",
-    "start": "node ./dist/server.js",
+    "start": "node ./dist/index.js",
     "build": "tsc"
   },
   "author": "Eliseo Arévalo",
