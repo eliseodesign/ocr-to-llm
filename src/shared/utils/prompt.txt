@@ -293,7 +293,7 @@
     ]
   }
 }
-En base al siguiente OCR, extrae la información y devuelve en en un json la información siguiendo las validaciones del json schema (No devolver el json schema sino el json en base a la estructura del json schema)
+En base al siguiente OCR, extrae la información y devuelve en en un json la información siguiendo las validaciones del json schema (No devolver el json schema sino el json en base a la estructura del json schema), las propiedades siempre deben seguir el pattern definido
 --- END PROMPT ---
 --- OCR ---
 {{ocr}}
