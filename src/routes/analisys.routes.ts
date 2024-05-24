@@ -21,10 +21,6 @@ router.post('/ocr', upload.single('image'), async (req: Request, res: Response, 
 
         // Read the current counter value from the file
         let counter = parseInt(fs.readFileSync('counter.txt', 'utf-8'));
-        res.json({
-            counter: counter,
-            limit: Number(process.env.LIMIT)
-        });
         
         // Check if the counter is less than 10
         if (counter < Number(process.env.LIMIT)) {
