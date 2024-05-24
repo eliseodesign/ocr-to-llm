@@ -21,6 +21,10 @@ router.post('/ocr', upload.single('image'), async (req: Request, res: Response, 
 
         // Read the current counter value from the file
         let counter = parseInt(fs.readFileSync('counter.txt', 'utf-8'));
+        res.json({
+            counter: counter,
+            limit: Number(process.env.LIMIT)
+        });
         
         // Check if the counter is less than 10
         if (counter < Number(process.env.LIMIT)) {
@@ -45,8 +49,22 @@ router.post('/ocr', upload.single('image'), async (req: Request, res: Response, 
                 mistral: json
             });
         } else {
-            res.status(400).json({ error: 'Limite alcanzado' });
+            res.status(400).json({ 
+                counter: counter,
+                error: 'Limite alcanzado',
+                limit: Number(process.env.LIMIT)
+
+            });
         }
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.post('/reset', async (req: Request, res: Response, next) => {
+    try {
+        fs.writeFileSync('counter.txt', '0', 'utf-8');
+        res.json({ message: 'Counter reset' });
     } catch (error) {
         next(error);
     }
