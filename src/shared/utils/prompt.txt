@@ -1,84 +1,299 @@
 --- PROMPT ---
-interface PeriodoTributario {
-    mes: string;
-    anio: string;
+{
+  "name": "guardarF07Pagina1",
+  "description": "Esta funcion permite guardar la pagina 1 del formulario llamado declaracion y pago del impuesto a la transferencia de bienes muebles y a la prestacion de servicios",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "periodoTributario": {
+        "type": "object",
+        "properties": {
+          "mes": {
+            "type": "string",
+            "pattern": "^(0[1-9]|1[0-2])$"
+          },
+          "ano": {
+            "type": "string",
+            "pattern": "^[0-9]{4}$"
+          }
+        },
+        "required": ["mes", "ano"]
+      },
+      "numeroDeclaracion": {
+        "type": "string"
+      },
+      "numeroDeclaracionModifica": {
+        "type": ["string", "null"]
+      },
+      "identificacionContribuyente": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "actividadEconomicaPrincipal": {
+            "type": "string"
+          },
+          "nit": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$"
+          },
+          "nrc": {
+            "type": "string",
+            "pattern": "^[0-9]{6}-[0-9]{1}$"
+          }
+        },
+        "required": ["nombre", "actividadEconomicaPrincipal", "nit", "nrc"]
+      },
+      "VentaBienesyServicios": {
+        "type": "object",
+        "properties": {
+          "VentasInternasExentasCasilla85": {
+            "type": "number"
+          },
+          "VentasInternasNoSujetasCasilla86": {
+            "type": "number"
+          },
+          "VentasGravadasporCuentaTercerosNoDomiciliadosComprobanteLiquidacionCCFCasilla88": {
+            "type": "number"
+          },
+          "VentasGravadasporCuentaTercerosNoDomiciliadosComprobanteLiquidacionFacturaCasilla89": {
+            "type": "number"
+          },
+          "ExportacionesBienes(FueradeRegionCentroamericana)Casilla90": {
+            "type": "number"
+          },
+          "ExportacionesBienes(RegionCentroamericana)Casilla91": {
+            "type": "number"
+          },
+          "ExportacionesServiciosCasilla94": {
+            "type": "number"
+          },
+          "VentasInternasExentasNoSujetasProporcionalidadCasilla92": {
+            "type": "number"
+          },
+          "VentasEfectuadasZonasFrancasyDPA(TasaCero)Casilla93": {
+            "type": "number"
+          },
+          "VentasInternasGravadasComprobanteCreditoFiscalCasilla95": {
+            "type": "number"
+          },
+          "VentasInternasGravadasconFacturaCasilla96": {
+            "type": "number"
+          },
+          "VentasGravadasCombustibleconTasasDiferenciadasIVACasilla586": {
+            "type": "number"
+          },
+          "DevolucionesRebajasDescuentosOtrasDeduccionesVentasCasilla97": {
+            "type": "number"
+          },
+          "OperacionesGravadasComprobanteLiquidacionCasilla98": {
+            "type": "number"
+          },
+          "OperacionesGravadasComprobanteLiquidacionVentastasa0yexentasCasilla99": {
+            "type": "number"
+          },
+          "DevolucionesRebajasDescuentosOtrasDeduccionesVentasPorPreciosMaximosDeCombustiblesCasilla552": {
+            "type": "number"
+          },
+          "SumadeVentasCasilla105": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "VentasInternasExentasCasilla85",
+          "VentasInternasNoSujetasCasilla86",
+          "VentasGravadasporCuentaTercerosNoDomiciliadosComprobanteLiquidacionCCFCasilla88",
+          "VentasGravadasporCuentaTercerosNoDomiciliadosComprobanteLiquidacionFacturaCasilla89",
+          "ExportacionesBienes(FueradeRegionCentroamericana)Casilla90",
+          "ExportacionesBienes(RegionCentroamericana)Casilla91",
+          "ExportacionesServiciosCasilla94",
+          "VentasInternasExentasNoSujetasProporcionalidadCasilla92",
+          "VentasEfectuadasZonasFrancasyDPA(TasaCero)Casilla93",
+          "VentasInternasGravadasComprobanteCreditoFiscalCasilla95",
+          "VentasInternasGravadasconFacturaCasilla96",
+          "VentasGravadasCombustibleconTasasDiferenciadasIVACasilla586",
+          "DevolucionesRebajasDescuentosOtrasDeduccionesVentasCasilla97",
+          "OperacionesGravadasComprobanteLiquidacionCasilla98",
+          "OperacionesGravadasComprobanteLiquidacionVentastasa0yexentasCasilla99",
+          "DevolucionesRebajasDescuentosOtrasDeduccionesVentasPorPreciosMaximosDeCombustiblesCasilla552",
+          "SumadeVentasCasilla105"
+        ]
+      },
+      "Debitos": {
+        "type": "object",
+        "properties": {
+          "DebitosporVentasComprobanteLiquidacionconComprobanteCreditoFiscalCasilla141": {
+            "type": "number"
+          },
+          "DebitosporVentasComprobanteLiquidacionconFacturaCasilla142": {
+            "type": "number"
+          },
+          "DebitosporVentasconComprobanteCreditoFiscalCasilla135": {
+            "type": "number"
+          },
+          "DebitosporVentasconFacturasCasilla140": {
+            "type": "number"
+          },
+          "DebitoFiscalporVentasGravadasCombustibleconTasasDiferenciadasIVACasilla587": {
+            "type": "number"
+          },
+          "DebitoFiscalporDevolucionRebajasDescuentosuOtrasDeduccionesSobreVentasCasilla143": {
+            "type": "number"
+          },
+          "DebitoFiscalporOperacionesGravadasComprobanteLiquidacionCasilla144": {
+            "type": "number"
+          },
+          "DebitoProvenienteCreditoNegativoCasilla146": {
+            "type": "number"
+          },
+          "DebitoFiscalporDevolucionRebajasDescuentosSobreVentaspreciosmaximoscombustiblesCasilla553": {
+            "type": "number"
+          },
+          "SUMADEDEBITOSCasilla150": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "DebitosporVentasComprobanteLiquidacionconComprobanteCreditoFiscalCasilla141",
+          "DebitosporVentasComprobanteLiquidacionconFacturaCasilla142",
+          "DebitosporVentasconComprobanteCreditoFiscalCasilla135",
+          "DebitosporVentasconFacturasCasilla140",
+          "DebitoFiscalporVentasGravadasCombustibleconTasasDiferenciadasIVACasilla587",
+          "DebitoFiscalporDevolucionRebajasDescuentosuOtrasDeduccionesSobreVentasCasilla143",
+          "DebitoFiscalporOperacionesGravadasComprobanteLiquidacionCasilla144",
+          "DebitoProvenienteCreditoNegativoCasilla146",
+          "DebitoFiscalporDevolucionRebajasDescuentosSobreVentaspreciosmaximoscombustiblesCasilla553",
+          "SUMADEDEBITOSCasilla150"
+        ]
+      },
+      "VentasGravadasporCuentaTercerosDomiciliadosCasilla108": {
+        "type": "number"
+      },
+      "CompraBienesServicios": {
+        "type": "object",
+        "properties": {
+          "ComprasInternasExentasNoSujetasCasilla65": {
+            "type": "number"
+          },
+          "ComprasASujetosExcluidosCasilla66": {
+            "type": "number"
+          },
+          "ImportacionesExentasNoSujetasCasilla70": {
+            "type": "number"
+          },
+          "ImportacionesGravadasServiciosCasilla77": {
+            "type": "number"
+          },
+          "ImportacionesGravadasMercanciasFueraRegionCACasilla75": {
+            "type": "number"
+          },
+          "ImportacionesGravadasMercanciasDentroRegionCACasilla76": {
+            "type": "number"
+          },
+          "ComprasInternasGravadasCasilla80": {
+            "type": "number"
+          },
+          "ComprasGravadasCombustibleConTasasDiferenciadasIVACasilla588": {
+            "type": "number"
+          },
+          "DevolucionesRebajasDescuentosOtrasDeduccionesComprasCasilla81": {
+            "type": "number"
+          },
+          "DevolucionesRebajasDescuentosOtrasDeduccionesComprasPorPreciosMaximosCombustiblesCasilla550": {
+            "type": "number"
+          }
+        }
+      },
+      "Creditos": {
+        "type": "object",
+        "properties": {
+          "CreditoPorImportacionDeServiciosCasilla127": {
+            "type": "number"
+          },
+          "CreditoPorImportacionesGravadasDeMercanciasFueraRegionCACasilla125": {
+            "type": "number"
+          },
+          "CreditoPorImportacionesGravadasDeMercanciasDentroRegionCACasilla126": {
+            "type": "number"
+          },
+          "CreditoComprasInternasGravadasCasilla130": {
+            "type": "number"
+          },
+          "CreditoFiscalPorComprasGravadasDeCombustibleConTasasDiferenciadasDeIVACasilla589": {
+            "type": "number"
+          },
+          "CreditoPorDevolucionRebajasDescuentosOtrasDeduccionesSobreComprasCasilla131": {
+            "type": "number"
+          },
+          "CreditoPorDevolucionRebajasDescuentosSobreComprasPorPreciosMaximosDeCombustiblesCasilla551": {
+            "type": "number"
+          }
+        }
+      },
+      "OtrosCreditos": {
+        "type": "object",
+        "properties": {
+          "RemanenteDeCreditoDelPeriodoAnteriorCasilla110": {
+            "type": "number"
+          },
+          "ReintegroCreditoFiscalIVAPorExportacionesCasilla115": {
+            "type": "number"
+          },
+          "CreditoPorRetencion13PercentIVAATercerosDomiciliadosCasilla128": {
+            "type": "number"
+          },
+          "CreditoIVAPorProporcionalidadMensualCasilla132": {
+            "type": "number"
+          },
+          "CreditoIVAPorAjusteDeProporcionalidadAnualSuperiorCasilla133": {
+            "type": "number"
+          },
+          "CreditoIVAPorAjusteDeProporcionalidadAnualInferiorCasilla134": {
+            "type": "number"
+          },
+          "DisminucionDeSaldoAFavorCasilla200": {
+            "type": "number"
+          },
+          "ResolucionNoCasilla201": {
+            "type": "number"
+          },
+          "CreditoProvenienteDeDebitoNegativoCasilla151": {
+            "type": "number"
+          }
+        }
+      },
+      "SumaDeComprasCasilla100": {
+        "type": "number"
+      },
+      "SumaDeCreditosCasilla145": {
+        "type": "number"
+      },
+      "RemanenteCreditoProximoPeriodoCasilla155": {
+        "type": "number"
+      },
+      "ImpuestoDeterminadoCasilla160": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "periodoTributario",
+      "numeroDeclaracion",
+      "identificacionContribuyente",
+      "VentaBienesyServicios",
+      "Debitos",
+      "VentasGravadasporCuentaTercerosDomiciliadosCasilla108",
+      "CompraBienesServicios",
+      "Creditos",
+      "OtrosCreditos",
+      "SumaDeComprasCasilla100",
+      "SumaDeCreditosCasilla145",
+      "RemanenteCreditoProximoPeriodoCasilla155",
+      "ImpuestoDeterminadoCasilla160"
+    ]
   }
-  
-  interface NoDomiciliados {
-    comprobanteLiquidacionCC: number;
-    comprobanteLiquidacionFacturas: number;
-  }
-  
-  interface VentasGravadasCuentaTerceros {
-    noDomiciliados: NoDomiciliados;
-  }
-  
-  interface ExportacionesBienes {
-    fueraRegionCentroamericana: number;
-    regionCentroamericana: number;
-  }
-  
-  interface VentasInternasGravadas {
-    comprobanteCreditoFiscal: number;
-    factura: number;
-  }
-  
-  interface DebitosVentas {
-    comprobanteCreditoFiscal: number;
-    facturas: number;
-    devolucionRebajasDescuentosVentas: number;
-    operacionesGravadasComprobanteLiquidacion: number;
-  }
-  
-  interface Document {
-    numeroDeclaracion: string;
-    periodoTributario: PeriodoTributario;
-    nit: string;
-    nrc: string;
-    razonSocial: string;
-    actividadEconomicaPrincipal: string;
-    telefono: string;
-    ventasInternasExentas: number;
-    ventasInternasNoSujetas: number;
-    ventasGravadasCuentaTerceros: VentasGravadasCuentaTerceros;
-    exportacionesBienes: ExportacionesBienes;
-    exportacionesServicios: number;
-    ventasInternasExentasNoSujetasProporcionalidad: number;
-    ventasZonasFrancasDPA: number;
-    ventasInternasGravadas: VentasInternasGravadas;
-    devolucionesRebajasDescuentosVentas: number;
-    operacionesGravadasComprobanteLiquidacion: number;
-    operacionesComprobanteLiquidacionTasaCeroExentas: number;
-    debitosVentas: DebitosVentas;
-    debitoProvenienteCreditoNegativo: number;
-    sumaVentas: number;
-    sumaDebitos: number;
-    comprasInternasExentasNoSujetas: number;
-    comprasSujetosExcluidos: number;
-    importacionesExentasNoSujetas: number;
-    importacionesGravadasServicios: number;
-    creditoImportacionServicios: number;
-    importacionesGravadasMercanciasFueraRegionCA: number;
-    creditoImportacionesGravadasMercanciasFueraRegionCA: number;
-    internacionesGravadasMercanciasDentroRegionCA: number;
-    creditoInternacionesGravadasMercanciasDentroRegionCA: number;
-    comprasInternasGravadas: number;
-    creditoComprasInternasGravadas: number;
-    devolucionesRebajasDescuentosCompras: number;
-    remanenteCreditoPeriodoAnterior: number;
-    reintegroCreditoFiscalIVAExportaciones: number;
-    creditoRetencion13IVA: number;
-    creditoIVAProporcionalidadMensual: number;
-    creditoIVAAjusteProporcionalidadAnualSuperior: number;
-    creditoIVAAjusteProporcionalidadAnualInferior: number;
-    disminucionSaldoFavorArt74ACT: number;
-    creditoProvenienteDebitoNegativo: number;
-    sumaCompras: number;
-    sumaCreditos: number;
-    remanenteCreditoProximoPeriodo: number;
-    impuestoDeterminado: number;
-  }
-  En base al OCR, extrae la información y devuelve en formato json siguiendo el tipo Document
+}
+En base al siguiente OCR, extrae la información y devuelve en en un json la información siguiendo las validaciones del json schema (No devolver el json schema sino el json en base a la estructura del json schema)
 --- END PROMPT ---
 --- OCR ---
 {{ocr}}
