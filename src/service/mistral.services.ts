@@ -19,7 +19,7 @@ export class MistralProvider {
     }
 
     public async createCompletion(message: string, jsonMode: boolean = false): Promise<string> {
-        const propmtPath = path.join(__dirname, '../shared/utils/prompt.txt')
+        const propmtPath = path.join('src/shared/utils/prompt.txt')
         const propmt = fs.readFileSync(propmtPath, 'utf8');
         message = propmt.replace(/{{ocr}}/g, message);
 
