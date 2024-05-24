@@ -17,7 +17,7 @@ class CompletionService {
     }
     const requestData = {
       model: 'mistral-large-latest',
-      messages: [{ role: 'user', content: message }],
+      messages: [{ role: 'user', content: clean }],
       response_format: responseFormat,
     };
 
