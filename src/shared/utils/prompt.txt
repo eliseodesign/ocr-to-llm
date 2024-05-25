@@ -19,6 +19,9 @@
         },
         "required": ["mesCasilla2", "anoCasilla5"]
       },
+      "disminuyeSaldoPorAplicacionCasilla495":{
+        "type": "boolean"
+      },
       "numeroDeclaracionCasilla10": {
         "type": "string"
       },
