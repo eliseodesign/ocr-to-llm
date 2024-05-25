@@ -8,42 +8,42 @@
       "periodoTributario": {
         "type": "object",
         "properties": {
-          "mes": {
+          "mesCasilla2": {
             "type": "string",
             "pattern": "^(0[1-9]|1[0-2])$"
           },
-          "ano": {
+          "anoCasilla5": {
             "type": "string",
             "pattern": "^[0-9]{4}$"
           }
         },
-        "required": ["mes", "ano"]
+        "required": ["mesCasilla2", "anoCasilla5"]
       },
-      "numeroDeclaracion": {
+      "numeroDeclaracionCasilla10": {
         "type": "string"
       },
-      "numeroDeclaracionModifica": {
+      "numeroDeclaracionModifica55": {
         "type": ["string", "null"]
       },
       "identificacionContribuyente": {
         "type": "object",
         "properties": {
-          "nombre": {
+          "nombreCasilla22": {
             "type": "string"
           },
-          "actividadEconomicaPrincipal": {
+          "actividadEconomicaPrincipal14": {
             "type": "string"
           },
-          "nit": {
+          "nitCasilla4": {
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$"
           },
-          "nrc": {
+          "nrcCasilla13": {
             "type": "string",
             "pattern": "^[0-9]{6}-[0-9]{1}$"
           }
         },
-        "required": ["nombre", "actividadEconomicaPrincipal", "nit", "nrc"]
+        "required": ["nombreCasilla22", "actividadEconomicaPrincipal14", "nitCasilla4", "nrcCasilla13"]
       },
       "VentaBienesyServicios": {
         "type": "object",
@@ -293,7 +293,7 @@
     ]
   }
 }
-En base al siguiente OCR, extrae la información y devuelve en en un json la información siguiendo las validaciones del json schema (No devolver el json schema sino el json en base a la estructura del json schema), las propiedades siempre deben seguir el pattern definido
+En base al siguiente OCR, extrae la información y devuelve en en un json la información siguiendo las validaciones del json schema (No devolver el json schema sino el json en base a la estructura del json schema), las propiedades siempre deben seguir el pattern definido, (Tener en cuenta que las propiedades tienen un numero de Casilla el cual debes utilizar para indentificar el valor correcto en el ocr)
 --- END PROMPT ---
 --- OCR ---
 {{ocr}}
