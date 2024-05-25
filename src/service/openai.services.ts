@@ -33,7 +33,7 @@ export class OpenAIProvider implements IOpenAIProvider {
         ];
 
         const requestData = {
-            model: 'GPT-4o', 
+            model: 'gpt-4o', 
             messages: messages,
             max_tokens: 4096,  // Ajusta esto según tus necesidades
             temperature: 0,
